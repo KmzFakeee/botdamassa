@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const ytdl = require("ytdl-core");
 const streamOptions = {seek: 0, volume: 10};
 
-const token = "NzM1NjIzMTkzMDE2MTM5ODM2.Xxi-EQ.GJdGMD5TlBRBgu6-tWlxrn8hX74";
+const token = "*********";
 
 bot.login(token)
 bot.on("ready", () => {
