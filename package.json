@@ -1,0 +1,20 @@
+{
+  "name": "botdamassa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "botDaMassa.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "discord.js": "^12.2.0",
+    "discord.js-musicbot-addon": "^13.9.1",
+    "ffbinaries": "^1.1.4",
+    "ffmpeg-static": "^4.2.7",
+    "opusscript": "0.0.7",
+    "ytdl-core": "^3.1.2"
+  }
+}

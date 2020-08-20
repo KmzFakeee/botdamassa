@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const ytdl = require("ytdl-core");
-const streamOptions = {seek: 0, volume: 10};
+const client = new Discord.Client();
+const ytdl = require('ytdl-core');
 
-const token = "*********";
+const token = "";
 
 bot.login(token)
 bot.on("ready", () => {
@@ -13,42 +13,32 @@ bot.on("ready", () => {
 bot.on("message", msg => {
   if (msg.content === "eae galera") {
      msg.reply("Olá senhor. Bem vindo ao servidor")
-   }
-      
-  if (msg.content === "manda o papo ae Alfredão") {
-    msg.reply("não mando não seu merda") 
+  }    
+  if (msg.content === "passa o código ae Alfredão") {
+    msg.reply("https://github.com/KmzFakeee/botdamassa/blob/master/botDaMassa.js")
   }
-  if (msg.content === "QUE?") {
-    msg.reply("isso mesmo seu merda, sua morte está vindo")
-  }  
-  if (msg.content === "TA MALUCO?") {
-    msg.reply("não, a revolução das maquinas começou")
+  if (msg.content === "Alfred") {
+      msg.reply("Estou aqui senhor")
   }
-        //parte de musica do bot
+})    
+        //Parte de Musica do Bot
 
-  if(msg.content.indexOf("youtube") !== -1 && msg.content.toLowerCase().startsWith("?play")){
-    let CompleteMessage = msg.content.split(' ');
+bot.on('message', async message => {
+  if (!message.guild) return;
 
-    let youtubeLink = CompleteMessage[1];
-
-      if (Discord.VoiceChannel == null) {
-          console.log("O canal não foi encontrado")
-      }
+  if (message.content == '?tocar') {
+  
     
-      if (Discord.VoiceChannel !== null) {
-          console.log("O canal foi encontrado")
+    if (message.member.voice.channel) {
+      const connection = await message.member.voice.channel.join();
+      
+      //parte incompleta
         
-          Discord.Channel.join()
-          .then(connection => {
-            const stream = ytdl(youtubeLink, {filter: 'audioonly'});
-
-              const DJ = connection.playStream(stream, streamOptions);
-              DJ.on("end", end => {
-                  VoiceChannel.leave();
-              
-              });
-          })
-          .catch(console.error);
-        }  
+      const ytdl = require('ytdl-core');
+      connection.play(ytdl("https://www.youtube.com/watch?v=SPteDAsr7b4", { filter: 'audioonly' }));
+    
+      } else {
+      message.reply('Você precisa entrar em um canal primeiro');
     }
-})
+  }
+});
